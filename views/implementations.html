@@ -7,7 +7,14 @@
 	</div>
 
 	<div class="implementation" ng-repeat="impl in implementations | filter:searchKey">
-		<h3>{{impl.name}} <a href="{{impl.github}}" class="btn btn-success" target="_blank"><i class="fa fa-github"></i> See code</a></h3>
+		<h3>{{impl.name}}
+			<a href="{{impl.github}}" class="btn btn-success" target="_blank">
+				<i class="fa fa-github"></i> Code
+			</a>
+			<button type="button" class="btn btn-success" disabled="true">
+				<i class="fa fa-cogs"></i> Run
+			</button>
+		</h3>
 		<div>{{impl.description}}</div>
 
 		<ul class="tags">
