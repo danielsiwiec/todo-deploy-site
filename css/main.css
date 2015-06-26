@@ -3,6 +3,10 @@ h1 {
 	font-weight: 900;
 }
 
+.navbar-brand {
+	font-weight: bold;
+}
+
 .current-spot h3 {
 	margin-top: 12px;
 	margin-bottom: 14px;
