@@ -1,18 +1,17 @@
 angular.module('core', [])
 	.factory('currentSpot', currentSpot)
-	.directive('ywActiveMenu', ywActiveMenu)
-	.directive('ywMenuId', ywMenuId);
+	.directive('activeMenu', activeMenu)
+	.directive('menuId', menuId);
 
 
-function ywActiveMenu(currentSpot) {
+function activeMenu(currentSpot) {
 	return function(scope, element, attrs) {
-		var activeMenuId = attrs["ywActiveMenu"];
-		var activeTitle = attrs["ywActiveTitle"];
-		currentSpot.setCurrentSpot(activeMenuId, activeTitle);
+		var activeMenuId = attrs["activeMenu"];
+		currentSpot.setCurrentSpot(activeMenuId);
 	}
 }
 
-function ywMenuId(currentSpot) {
+function menuId(currentSpot) {
 
 	var menuElements = [];
 
@@ -25,7 +24,7 @@ function ywMenuId(currentSpot) {
 	}
 
 	return function(scope, element, attrs) {
-		var menuId = attrs['ywMenuId'];
+		var menuId = attrs['menuId'];
 		menuElements.push({
 			id: menuId,
 			node: element
@@ -47,20 +46,14 @@ function ywMenuId(currentSpot) {
 
 function currentSpot() {
 	var activeMenuId = '';
-	var titleText = '';
 
 	return {
-		setCurrentSpot: function(menuId, title) {
+		setCurrentSpot: function(menuId) {
 			activeMenuId = menuId;
-			titleText = title;
 		},
 
 		getActiveMenu: function() {
 			return activeMenuId;
-		},
-
-		getTitle: function() {
-			return titleText;
 		}
 	}
 }

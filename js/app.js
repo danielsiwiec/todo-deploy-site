@@ -27,15 +27,10 @@ angular.module('tododeploy', ['ngRoute', 'core'])
 function AdminCtrl($scope, currentSpot) {
 
 	$scope.isActive = isActive;
-	$scope.getTitle = getTitle;
 	$scope.getActiveMenu = getActiveMenu;
 
 	function isActive(menuId) {
 		return currentSpot.getActiveMenu() == menuId;
-	}
-
-	function getTitle() {
-		return currentSpot.getTitle();
 	}
 
 	function getActiveMenu() {
