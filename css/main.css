@@ -22,6 +22,17 @@ h1 {
 	margin-bottom: 14px;
 }
 
+.tags {
+	list-style-type: none;
+	padding-left: 0px;
+	margin-top: 10px;
+}
+
+.tags li {
+	display: inline;
+	margin-right: 5px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

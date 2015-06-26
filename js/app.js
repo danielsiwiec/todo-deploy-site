@@ -1,7 +1,8 @@
-angular.module('tododeploy', ['ngRoute','core'])
+angular.module('tododeploy', ['ngRoute', 'core'])
 	.controller('adminCtrl', AdminCtrl)
 	.controller('mainCtrl', MainCtrl)
 	.controller('implementationsCtrl', ImplementationsCtrl)
+	.factory('implementationsSvc', implementationsSvc)
 	.config(function($routeProvider) {
 
 		$routeProvider.when('/implementations', {
@@ -39,4 +40,16 @@ function AdminCtrl($scope, currentSpot) {
 
 function MainCtrl() {}
 
-function ImplementationsCtrl() {}
+function ImplementationsCtrl($scope, implementationsSvc) {
+
+	$scope.implementations = implementationsSvc.getImplementations();
+}
+
+function implementationsSvc() {
+
+	return {
+		getImplementations: function() {
+			return implementations;
+		}
+	}
+}

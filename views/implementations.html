@@ -1,3 +1,10 @@
 <div yw-active-menu="Implementations" yw-active-title="Implementations">
-	<p>Comming soon...</p>
+	<div ng-repeat="impl in implementations">
+		<h3>{{impl.name}} <a href="{{impl.github}}" class="btn btn-primary" target="_blank"><i class="fa fa-github"></i> See code</a></h3>
+		<div>{{impl.description}}</div>
+
+		<ul class="tags">
+			<li ng-repeat="tag in impl.tags | orderBy: tag "><i class="fa fa-tag"></i>{{tag}}</li>
+		</ul>
+	</div>
 </div>
