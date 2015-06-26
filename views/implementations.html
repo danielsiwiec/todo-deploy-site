@@ -1,5 +1,12 @@
 <div yw-active-menu="Implementations" yw-active-title="Implementations">
-	<div class="implementation" ng-repeat="impl in implementations">
+
+	<div class="row filter">
+		<div class="col-sm-4 col-sm-offset-8">
+			<input class="form-control input" placeholder="Filter" ng-model="searchKey" />
+		</div>
+	</div>
+
+	<div class="implementation" ng-repeat="impl in implementations | filter:searchKey">
 		<h3>{{impl.name}} <a href="{{impl.github}}" class="btn btn-success" target="_blank"><i class="fa fa-github"></i> See code</a></h3>
 		<div>{{impl.description}}</div>
 

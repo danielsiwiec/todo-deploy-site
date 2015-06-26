@@ -61,6 +61,10 @@ body {
 	padding-bottom: 50px;
 }
 
+.filter {
+	margin-bottom: 30px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
