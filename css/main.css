@@ -57,6 +57,10 @@ body {
   line-height: 40px;
 }
 
+.implementation {
+	padding-bottom: 50px;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
