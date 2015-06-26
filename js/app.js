@@ -3,12 +3,18 @@ angular.module('tododeploy', ['ngRoute', 'core'])
 	.controller('mainCtrl', MainCtrl)
 	.controller('implementationsCtrl', ImplementationsCtrl)
 	.factory('implementationsSvc', implementationsSvc)
+	.controller('contributingCtrl', ContributingCtrl)
 	.config(function($routeProvider) {
 
 		$routeProvider.when('/implementations', {
 			templateUrl: '/views/implementations.html',
 			controller: 'implementationsCtrl'
 		});
+
+		$routeProvider.when('/contributing', {
+			templateUrl: '/views/contributing.html',
+			controller: 'contributingCtrl'
+		})
 
 		$routeProvider.otherwise({
 			templateUrl: '/views/main.html',
@@ -53,3 +59,6 @@ function implementationsSvc() {
 		}
 	}
 }
+
+
+function ContributingCtrl() {}
